@@ -9,7 +9,7 @@
 
 **An intelligent AI-powered web application for accurate brain tumor classification with explainable Grad-CAM visualizations**
 
-[Features](#-features) • [Quick Start](#-quick-start) • [How It Works](#-how-it-works) • [Model Details](#-model-details) • [Demo](#-demo)
+[Features](#-features) • [Quick Start](#-quick-start) • [How It Works](#-how-it-works) • [Model Details](#model-details) • [Demo](#-demo)
 
 </div>
 
@@ -23,6 +23,39 @@ This application leverages state-of-the-art deep learning to classify brain MRI 
 - **Visual Explanations**: Grad-CAM heatmaps showing which regions the model focuses on
 - **User-Friendly Interface**: Clean, intuitive web UI for seamless image analysis
 - **GPU Optimized**: CUDA support for lightning-fast inference
+
+---
+
+## 📑 Table of Contents
+
+1. [Overview](#-overview)
+2. [Features](#-features)
+   - [Core Capabilities](#-core-capabilities)
+   - [Technical Highlights](#-technical-highlights)
+3. [Tech Stack](#-tech-stack)
+4. [Requirements](#-requirements)
+5. [Quick Start](#-quick-start)
+   - [Prerequisites](#prerequisites)
+   - [Installation](#installation)
+6. [Usage](#-usage)
+   - [Web Interface](#web-interface)
+7. [How It Works](#-how-it-works)
+   - [Architecture Flow](#architecture-flow)
+   - [Model Details](#model-details)
+   - [Classification Categories](#classification-categories)
+8. [Grad-CAM Visualization](#-grad-cam-visualization)
+9. [Performance Metrics](#-performance-metrics)
+10. [Project Structure](#-project-structure)
+11. [Demo](#-demo)
+    - [Example Usage](#example-usage)
+    - [Expected Output](#expected-output)
+12. [Configuration](#-configuration)
+13. [Deployment](#-deployment-future-work)
+14. [Contributing](#-contributing)
+15. [Disclaimer](#️-disclaimer)
+16. [License](#-license)
+17. [Author](#-author)
+18. [Support](#-support)
 
 ---
 
@@ -46,26 +79,25 @@ This application leverages state-of-the-art deep learning to classify brain MRI 
 
 | Component | Technology |
 |-----------|-----------|
-| **Backend** | Flask 3.1.1 |
-| **Deep Learning** | PyTorch 2.7.1, TorchVision 0.22.1 |
+| **Backend** | Flask |
+| **Deep Learning** | PyTorch, TorchVision |
 | **Computer Vision** | OpenCV, PIL |
 | **Visualization** | Matplotlib, NumPy |
 | **Frontend** | HTML5, CSS3, JavaScript |
-| **Deployment Ready** | Containerizable |
 
 ---
 
 ## 📋 Requirements
 
 ```
-Flask==3.1.1
-PyTorch==2.7.1
-TorchVision==0.22.1
-TorchAudio==2.7.1
-OpenCV==4.12.0.88
-Pillow==11.3.0
-Matplotlib==3.10.3
-NumPy==2.2.6
+Flask
+PyTorch
+TorchVision
+TorchAudio
+OpenCV
+Pillow
+Matplotlib
+NumPy
 ```
 
 ---
@@ -137,21 +169,6 @@ http://localhost:5000
 3. **Interpret Predictions**
    - Red regions: Areas the model focused on
    - Intensity: How important that region was for the decision
-
-### Command Line Usage
-
-```python
-from utils import generate_gradcam
-from app import model, transform, GRADCAM_FOLDER
-
-# Generate prediction and Grad-CAM
-gradcam_path = generate_gradcam(
-    model=model,
-    image_path="path/to/mri_scan.jpg",
-    target_class=0,  # Class index
-    output_dir=GRADCAM_FOLDER
-)
-```
 
 ---
 
@@ -234,7 +251,7 @@ Brain-Tumor-Detection/
 │   └── gradcam/                   # Generated heatmaps
 ├── templates/
 │   └── index.html                 # Web interface
-└── README.md                       # This file
+└── README.md
 ```
 
 ---
@@ -285,34 +302,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 ---
 
-## 🔧 Troubleshooting
-
-### Issue: Model file not found
-```bash
-# Ensure Git LFS is installed and pulled
-git lfs install
-git lfs pull
-```
-
-### Issue: CUDA out of memory
-```python
-# Use CPU instead in app.py
-device = torch.device("cpu")
-```
-
-### Issue: Port 5000 already in use
-```bash
-python app.py --port 5001
-```
-
-### Issue: ImportError for torch/torchvision
-```bash
-pip install --upgrade torch torchvision torchaudio
-```
-
----
-
-## 🚀 Deployment
+## 🚀 Deployment (Future Work)
 
 ### Docker (Coming Soon)
 ```bash
@@ -350,9 +340,9 @@ Contributions are welcome! Here's how:
 
 ## ⚠️ Disclaimer
 
-**Important**: This application is designed for **research and educational purposes**. 
+**Important**: This application is designed for **research and educational purposes**.
 
-⚠️ **NOT FOR MEDICAL DIAGNOSIS** - This tool should NOT be used for medical diagnosis without professional medical review. Always consult qualified radiologists and medical professionals for actual medical decisions.
+⚠️ **NOT FOR MEDICAL DIAGNOSIS** — This tool should NOT be used for medical diagnosis without professional medical review. Always consult qualified radiologists and medical professionals for actual medical decisions.
 
 The predictions are AI-based and may contain errors. Professional medical expertise is essential.
 
@@ -360,34 +350,24 @@ The predictions are AI-based and may contain errors. Professional medical expert
 
 ## 📝 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
 
 ---
 
 ## 👨‍💻 Author
 
-**Likith Reddy**  
+**Likith V K**
 Deep Learning Enthusiast | AI Developer
 
-[GitHub](https://github.com/Likith-2004) | [LinkedIn](https://linkedin.com/in/likith-reddy)
-
----
-
-## 🙏 Acknowledgments
-
-- **ResNet Architecture**: He, K., et al. (2015) "Deep Residual Learning for Image Recognition"
-- **Grad-CAM**: Selvaraju, R. R., et al. (2017) "Grad-CAM: Visual Explanations from Deep Networks"
-- **Community**: Thanks to the PyTorch and Flask communities
+[GitHub](https://github.com/Likith-2004) • [LinkedIn](https://linkedin.com/in/likith-vk-929b5b280)
 
 ---
 
 ## 📞 Support
 
-Have questions or issues? 
+Have questions or issues?
 
-- 📧 **Email**: [your-email@example.com]
-- 🐛 **Issues**: [GitHub Issues](https://github.com/Likith-2004/Brain-Tumor-Detection/issues)
-- 💬 **Discussions**: [GitHub Discussions](https://github.com/Likith-2004/Brain-Tumor-Detection/discussions)
+- 📧 **Email**: likithvk2004@gmail.com
 
 ---
 
