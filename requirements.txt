@@ -1,0 +1,7 @@
+flask
+matplotlib
+numpy
+pillow
+torch
+torchvision
+torchaudio
