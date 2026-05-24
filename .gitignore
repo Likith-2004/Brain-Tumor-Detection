@@ -46,11 +46,12 @@ instance/
 ehthumbs.db
 Thumbs.db
 
-# Project specific
-model/*.pth
+# Project specific - exclude large/generated files but keep folder structure
+model/*
+!model/.gitkeep
 static/uploads/*
-static/gradcam/*
 !static/uploads/.gitkeep
+static/gradcam/*
 !static/gradcam/.gitkeep
 
 # Environment
