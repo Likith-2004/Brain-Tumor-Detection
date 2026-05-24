@@ -46,9 +46,8 @@ instance/
 ehthumbs.db
 Thumbs.db
 
-# Project specific - exclude large/generated files but keep folder structure
-model/*
-!model/.gitkeep
+# Project specific - exclude generated files but keep folder structure
+# .pth files are tracked with Git LFS
 static/uploads/*
 !static/uploads/.gitkeep
 static/gradcam/*
